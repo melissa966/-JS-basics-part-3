@@ -1,4 +1,14 @@
 /*Write a JavaScript program that compare two objects to determine if the first one contains equivalent property values to the second one.*/
+
+const verification = (object1, object2) => {
+  for (key in object2) {
+    if (object1[key] !== object2[key]) {
+      return false;
+    }
+  }
+  return true;
+};
+
 const a = {
   name: "melissa",
   univ: "usthb",
@@ -12,16 +22,6 @@ const c = {
   name: "melissa",
   univ: "usthb",
 };
-
-const verification = (object1, object2) => {
-  for (key in object2) {
-    if (object1[key] !== object2[key]) {
-      return false;
-    }
-  }
-  return true;
-};
-
 console.log(verification(a, b));
 console.log(verification(a, c));
 
@@ -38,7 +38,8 @@ function difference(array1, array2) {
   }
 
   return same;
-};
+}
+
 var array1 = [1, 2, 3];
 var array2 = [100, 2, 1, 10];
 console.log(difference(array1, array2));
